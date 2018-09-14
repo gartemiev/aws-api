@@ -1,0 +1,6 @@
+#List S3 buckets
+aws s3api list-buckets --output text --profile root
+
+#Enable/disalbe MFA delete version for S3 bucket
+aws s3api put-bucket-versioning --bucket bucket-alias-name --versioning-configuration Status=Enabled,MFADelete=Enabled--mfa "arn:aws:iam authNumber" --profile root
+aws s3api put-bucket-versioning --bucket bucket-alias-name --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "arn:aws:iam authNumber" --profile root
