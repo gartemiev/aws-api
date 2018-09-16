@@ -1,0 +1,2 @@
+#Generate MFA session tokern on 36 hours duration
+aws sts get-session-token --serial-number arn:aws:iam --token-code somecode --duration-seconds 129600
