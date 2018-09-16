@@ -4,3 +4,6 @@ aws s3api list-buckets --output text --profile root
 #Enable/disalbe MFA delete version for S3 bucket
 aws s3api put-bucket-versioning --bucket bucket-alias-name --versioning-configuration Status=Enabled,MFADelete=Enabled--mfa "arn:aws:iam authNumber" --profile root
 aws s3api put-bucket-versioning --bucket bucket-alias-name --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "arn:aws:iam authNumber" --profile root
+
+#Copy content of 1 bucket to another
+aws s3 cp --recursive s3://devbucket2-2018 s3://devbucket4-2018
